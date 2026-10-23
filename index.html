@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Etsy Fee & Profit Calculator (EU/UK, VAT-aware)</title>
+<meta name="description" content="Free Etsy profit calculator for EU and UK sellers: listing fee, transaction fee, payment processing, VAT and shipping. See your real profit per sale.">
+<style>body{font-family:system-ui;max-width:640px;margin:2em auto;padding:0 1em}label{display:block;margin:.6em 0}input{width:8em}#o{background:#f4f4f4;padding:1em;margin-top:1em}</style></head><body>
+<h1>Etsy Fee &amp; Profit Calculator (EU/UK)</h1>
+<p>Estimate your real profit per sale. Fees are editable defaults; check Etsy's current fee page.</p>
+<label>Item price (gross, incl. VAT) <input id=p type=number value=20></label>
+<label>Shipping charged <input id=s type=number value=4></label>
+<label>VAT rate % <input id=v type=number value=20></label>
+<label>Your item cost + postage paid <input id=c type=number value=8></label>
+<label>Transaction fee % <input id=t type=number value=6.5></label>
+<label>Payment processing % <input id=pp type=number value=4></label>
+<label>Payment fixed fee <input id=pf type=number value=0.30></label>
+<label>Listing fee <input id=l type=number value=0.18></label>
+<div id=o></div>
+<p>Need to track this for every order, with monthly summaries and OSS/VAT records? <a href="https://www.etsy.com/listing/4600851427">Etsy profit &amp; VAT spreadsheet</a> · <a href="https://www.etsy.com/listing/4601454396">UK side-hustle tax tracker</a></p>
+<script>
+function f(){const g=id=>+document.getElementById(id).value||0;
+const tot=g('p')+g('s'),net=tot/(1+g('v')/100),vat=tot-net;
+const fees=tot*g('t')/100+tot*g('pp')/100+g('pf')+g('l');
+const profit=net-fees-g('c');
+o.innerHTML=`Total paid by buyer: ${tot.toFixed(2)}<br>VAT to pay: ${vat.toFixed(2)}<br>Etsy fees: ${fees.toFixed(2)}<br><b>Profit: ${profit.toFixed(2)} (${(profit/net*100).toFixed(1)}% of net)</b>`}
+document.querySelectorAll('input').forEach(i=>i.oninput=f);f();
+</script></body></html>
