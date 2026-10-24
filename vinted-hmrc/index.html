@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Do I Have to Tell HMRC About My Vinted or eBay Sales? Free Checker</title>
+<meta name="description" content="Plain-English guide and free checker: when Vinted, eBay and Depop sales count as trading, the GBP 1,000 trading allowance, what platforms report to HMRC, and what records to keep.">
+<style>body{font-family:system-ui;max-width:680px;margin:2em auto;padding:0 1em;line-height:1.5}label{display:block;margin:.6em 0}input{width:9em}#o{background:#f4f4f4;padding:1em;margin-top:1em}a.b{display:inline-block;background:#1f3a5f;color:#fff;padding:.6em 1em;border-radius:6px;text-decoration:none;margin:.3em 0}</style></head><body>
+<h1>Do I have to tell HMRC about my Vinted or eBay sales?</h1>
+<p>Short answer: it depends on whether you are <em>trading</em> or just clearing out your own things. This page explains the basics and gives you a quick checker. It is general information, not tax advice; always confirm on gov.uk.</p>
+<h2>Selling your own unwanted items</h2>
+<p>Selling personal belongings you no longer need (a few clothes, an old games console) is generally not treated as trading, so there is usually no income tax to declare.</p>
+<h2>Buying to resell, or selling regularly</h2>
+<p>If you buy things to resell, make items to sell, or sell regularly to make a profit, HMRC is likely to see this as a trade. The GBP 1,000 trading allowance means that if your total trading income for the tax year is GBP 1,000 or less, you generally do not need to register or report it. Above that, you usually need to register for Self Assessment and report your profit.</p>
+<h2>What platforms report</h2>
+<p>Online platforms such as Vinted, eBay and Depop now collect and pass seller information to tax authorities, generally for sellers with 30 or more sales or about EUR 2,000 of income in a year. Being reported does not by itself mean you owe tax, but HMRC can see the numbers, so keep your own records.</p>
+<h2>Quick checker</h2>
+<label>Total sales this tax year (GBP) <input id=s type=number value=2500></label>
+<label>Cost of stock you bought to resell (GBP) <input id=c type=number value=900></label>
+<label>Fees, postage and packaging (GBP) <input id=f type=number value=250></label>
+<div id=o></div>
+<script>
+function go(){var s=+document.getElementById('s').value,c=+document.getElementById('c').value,f=+document.getElementById('f').value;
+var exp=c+f,profit=Math.max(0,s-exp),allow=Math.min(1000,s),withAllow=Math.max(0,s-1000),best=Math.min(profit,withAllow);
+var t='';
+if(s<=1000)t='Sales are within the GBP 1,000 trading allowance, so you generally do not need to report them. Keep your records anyway.';
+else t='Sales are above the GBP 1,000 trading allowance. Your taxable profit is roughly GBP '+best.toFixed(0)+' (using whichever is lower: actual expenses GBP '+profit.toFixed(0)+' or the allowance method GBP '+withAllow.toFixed(0)+'). You will likely need to register for Self Assessment. Estimate only.';
+document.getElementById('o').textContent=t;}
+['s','c','f'].forEach(function(i){document.getElementById(i).oninput=go});go();
+</script>
+<h2>What records to keep</h2>
+<p>For each sale: date, platform, amount and fees. For stock: what you paid and when. Also postage, packaging and any other costs of selling. A simple spreadsheet is enough as long as it is complete.</p>
+<h2>A ready-made spreadsheet</h2>
+<p>If you want this done for you, the UK Vinted and eBay Reseller Tax Tracker has an income log by platform, an expense log with resale categories, and a summary that compares the trading allowance with your real expenses. Works in Excel and Google Sheets.</p>
+<p><a class="b" href="https://vilkas1.gumroad.com/l/uk-reseller-tax-tracker">UK Vinted and eBay Reseller Tax Tracker</a></p>
+<p>Registered as a sole trader with mileage and home office to track? <a href="https://vilkas1.gumroad.com/l/uk-sole-trader-tracker">UK Sole Trader Self Assessment Tracker</a>.</p>
+<p><small>Record-keeping aid, not tax advice. Rules and thresholds change; check gov.uk.</small></p>
+</body></html>
