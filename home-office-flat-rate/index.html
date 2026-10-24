@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Working From Home Flat Rate Calculator for UK Sole Traders</title>
+<meta name="description" content="Free calculator for the HMRC simplified expenses flat rate for working from home: 10 / 18 / 26 per month depending on hours. Self-employed UK guide and record-keeping tips.">
+<style>body{font-family:system-ui;max-width:680px;margin:2em auto;padding:0 1em;line-height:1.5}label{display:block;margin:.6em 0}input{width:9em}#o{background:#f4f4f4;padding:1em;margin-top:1em}a.b{display:inline-block;background:#1f3a5f;color:#fff;padding:.6em 1em;border-radius:6px;text-decoration:none}</style></head><body>
+<h1>Working from home flat rate calculator (UK sole traders)</h1>
+<p>Self-employed people can claim a flat monthly amount for using their home as a base instead of tracking each bill. The simplified rate is based on hours worked at home each month: <strong>GBP 10 for 25-50 hours, GBP 18 for 51-100 hours, GBP 26 for 101 hours or more</strong>. Under 25 hours does not qualify for the flat rate. Check gov.uk for the current figures.</p>
+<label>Hours worked at home this month <input id=h type=number value=70></label>
+<label>Months like this in the tax year <input id=n type=number value=12></label>
+<div id=o></div>
+<script>
+function go(){var h=+document.getElementById('h').value||0,n=+document.getElementById('n').value||0,r=h>=101?26:h>=51?18:h>=25?10:0;
+document.getElementById('o').textContent='Flat rate: GBP '+r+' per month, GBP '+(r*n)+' over '+n+' months.';}
+['h','n'].forEach(function(i){document.getElementById(i).oninput=go});go();
+</script>
+<h2>What to keep</h2>
+<p>Note the hours you work at home each month. You can still claim a proportion of actual costs instead if that is higher and you can show how you worked it out.</p>
+<h2>A ready-made tracker</h2>
+<p>The UK Sole Trader Self Assessment Tracker has a Home Office sheet that turns your monthly hours into the flat-rate amount and feeds it into the tax summary, alongside a mileage log and income and expense logs. Excel and Google Sheets.</p>
+<p><a class="b" href="https://vilkas1.gumroad.com/l/uk-sole-trader-tracker">See the Sole Trader Tracker</a></p>
+<p><small>General information, not tax advice. Rates change; check gov.uk.</small></p>
+</body></html>
