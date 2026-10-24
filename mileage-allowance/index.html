@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UK Mileage Allowance Calculator for Sole Traders (45p / 25p per mile)</title>
+<meta name="description" content="Free UK mileage allowance calculator for self-employed people: 45p per mile for the first 10,000 business miles, 25p after. Plus how to keep a mileage log for Self Assessment.">
+<style>body{font-family:system-ui;max-width:680px;margin:2em auto;padding:0 1em;line-height:1.5}label{display:block;margin:.6em 0}input{width:9em}#o{background:#f4f4f4;padding:1em;margin-top:1em}a.b{display:inline-block;background:#1f3a5f;color:#fff;padding:.6em 1em;border-radius:6px;text-decoration:none}</style></head><body>
+<h1>UK mileage allowance calculator for sole traders</h1>
+<p>If you use your own car or van for business, you can usually claim simplified mileage instead of working out actual running costs: <strong>45p per mile for the first 10,000 business miles in the tax year, 25p per mile after that</strong> (cars and vans). Check gov.uk for current rates and for motorbikes and bicycles.</p>
+<label>Business miles this tax year <input id=m type=number value=6500></label>
+<div id=o></div>
+<script>
+function go(){var m=+document.getElementById('m').value||0,a=Math.min(m,10000)*0.45+Math.max(0,m-10000)*0.25;
+document.getElementById('o').textContent='Claimable at simplified rates: GBP '+a.toFixed(2)+' ('+m+' miles).';}
+document.getElementById('m').oninput=go;go();
+</script>
+<h2>What to record for each trip</h2>
+<p>Date, start and end place, business purpose and miles. Commuting from home to a regular workplace is not normally claimable. Keep the log for at least the period HMRC requires you to keep records.</p>
+<h2>Do not double count</h2>
+<p>If you claim simplified mileage you cannot also claim actual fuel, insurance or repairs for the same vehicle.</p>
+<h2>A ready-made log</h2>
+<p>The UK Sole Trader Self Assessment Tracker has a mileage log that applies the 45p/25p rates automatically, plus income and expense logs, a home office calculator and a tax summary. Excel and Google Sheets.</p>
+<p><a class="b" href="https://vilkas1.gumroad.com/l/uk-sole-trader-tracker">See the Sole Trader Tracker</a></p>
+<p><small>General information, not tax advice. Rates change; check gov.uk.</small></p>
+</body></html>
